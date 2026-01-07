@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+# Quick installer for Moonlight theme ports
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+echo "🌌 Moonlight Theme Installer"
+echo "=============================="
+echo
+
+# Neovim
+if command -v nvim &> /dev/null; then
+    echo "📝 Installing Neovim theme..."
+    mkdir -p ~/.config/nvim/colors
+    cp "$SCRIPT_DIR/neovim/moonlight.lua" ~/.config/nvim/colors/
+    echo "   ✓ Installed to ~/.config/nvim/colors/moonlight.lua"
+    echo "   Add 'vim.cmd(\"colorscheme moonlight\")' to your init.lua"
+    echo
+fi
+
+# Ghostty
+if command -v ghostty &> /dev/null; then
+    echo "👻 Installing Ghostty theme..."
+    mkdir -p ~/.config/ghostty/themes
+    cp "$SCRIPT_DIR/ghostty/moonlight" ~/.config/ghostty/themes/
+    echo "   ✓ Installed to ~/.config/ghostty/themes/moonlight"
+    echo "   Add 'theme = moonlight' to your Ghostty config"
+    echo
+fi
+
+# tmux
+if command -v tmux &> /dev/null; then
+    echo "🖥️  Installing tmux theme..."
+    TMUX_CONF=~/.tmux.conf
+    SOURCE_LINE="source-file $SCRIPT_DIR/tmux/moonlight.tmux"
+    
+    if ! grep -q "moonlight.tmux" "$TMUX_CONF" 2>/dev/null; then
+        echo "$SOURCE_LINE" >> "$TMUX_CONF"
+        echo "   ✓ Added source line to ~/.tmux.conf"
+        echo "   Run 'tmux source-file ~/.tmux.conf' to apply"
+    else
+        echo "   ℹ Already configured in ~/.tmux.conf"
+    fi
+    echo
+fi
+
+# Fish
+if command -v fish &> /dev/null; then
+    echo "🐟 Installing Fish theme..."
+    mkdir -p ~/.config/fish/conf.d
+    cp "$SCRIPT_DIR/fish/moonlight.fish" ~/.config/fish/conf.d/
+    echo "   ✓ Installed to ~/.config/fish/conf.d/moonlight.fish"
+    echo "   Restart your shell or run 'source ~/.config/fish/conf.d/moonlight.fish'"
+    echo
+fi
+
+# Bat
+if command -v bat &> /dev/null; then
+    echo "🦇 Installing Bat theme..."
+    BAT_THEMES="$(bat --config-dir)/themes"
+    mkdir -p "$BAT_THEMES"
+    cp "$SCRIPT_DIR/bat/Moonlight.tmTheme" "$BAT_THEMES/"
+    bat cache --build &> /dev/null
+    echo "   ✓ Installed and rebuilt cache"
+    echo "   Use 'bat --theme=Moonlight' or add '--theme=\"Moonlight\"' to ~/.config/bat/config"
+    echo
+fi
+
+echo "✨ Installation complete!"
+echo
+echo "For more details, see README.md in each theme directory."
