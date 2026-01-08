@@ -29,6 +29,7 @@ For Neovim, use the official [moonlight.nvim](https://github.com/shaunsingh/moon
    Or copy the file and import it:
 
    ```bash
+   mkdir -p ~/.config/ghostty/themes
    cp ghostty/moonlight ~/.config/ghostty/themes/
    ```
 
