@@ -4,39 +4,19 @@ A collection of [Moonlight](https://github.com/atomiks/moonlight-vscode-theme) t
 
 ## Themes Included
 
-- **Neovim** - Full colorscheme with Treesitter and LSP support
 - **Ghostty** - Terminal emulator theme
 - **tmux** - Status bar and pane styling
 - **Fish** - Shell prompt and syntax highlighting
 - **Bat** - Syntax highlighter theme
 - **eza** - Modern ls replacement theme
 
+For Neovim, use the official [moonlight.nvim](https://github.com/shaunsingh/moonlight.nvim) theme.
+
 ## Preview
 
 ![Moonlight Theme](https://github.com/atomiks/moonlight-vscode-theme/raw/master/preview.webp)
 
 ## Installation
-
-### Neovim
-
-1. Copy `neovim/moonlight.lua` to your Neovim colors directory:
-
-   ```bash
-   mkdir -p ~/.config/nvim/colors
-   cp neovim/moonlight.lua ~/.config/nvim/colors/
-   ```
-
-2. Add to your `init.lua` or `init.vim`:
-
-   ```lua
-   vim.cmd('colorscheme moonlight')
-   ```
-
-   Or in vimscript:
-
-   ```vim
-   colorscheme moonlight
-   ```
 
 ### Ghostty
 
