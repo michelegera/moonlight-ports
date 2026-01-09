@@ -9,6 +9,7 @@ A collection of [Moonlight](https://github.com/atomiks/moonlight-vscode-theme) t
 - **Fish** - Shell prompt and syntax highlighting
 - **Bat** - Syntax highlighter theme
 - **eza** - Modern ls replacement theme
+- **lazygit** - Terminal UI for git commands
 
 For Neovim, use the official [moonlight.nvim](https://github.com/shaunsingh/moonlight.nvim) theme.
 
@@ -114,6 +115,50 @@ For Neovim, use the official [moonlight.nvim](https://github.com/shaunsingh/moon
    ```bash
    cp eza/moonlight.yml ~/.config/eza/moonlight.yml
    ln -sf ~/.config/eza/moonlight.yml ~/.config/eza/theme.yml
+   ```
+
+### lazygit
+
+1. Copy the theme to lazygit's config directory:
+
+   ```bash
+   mkdir -p ~/.config/lazygit
+   cp lazygit/moonlight.yml ~/.config/lazygit/
+   ```
+
+2. Set the `LG_CONFIG_FILE` environment variable to point to the theme file:
+
+   **For Fish:**
+
+   ```fish
+   # Add to ~/.config/fish/config.fish
+   set -gx LG_CONFIG_FILE "$HOME/.config/lazygit/moonlight.yml"
+   ```
+
+   **For Bash/Zsh:**
+
+   ```bash
+   # Add to ~/.bashrc or ~/.zshrc
+   export LG_CONFIG_FILE="$HOME/.config/lazygit/moonlight.yml"
+   ```
+
+3. Restart your shell or source the config file:
+
+   ```bash
+   # Fish
+   source ~/.config/fish/config.fish
+
+   # Bash
+   source ~/.bashrc
+
+   # Zsh
+   source ~/.zshrc
+   ```
+
+   Note: If you have an existing `~/.config/lazygit/config.yml` with custom settings, you can merge them by using comma-separated paths:
+
+   ```bash
+   export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/moonlight.yml"
    ```
 
 ## Color Palette
