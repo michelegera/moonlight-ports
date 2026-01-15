@@ -7,6 +7,7 @@ A collection of [Moonlight](https://github.com/atomiks/moonlight-vscode-theme) t
 - **Ghostty** - Terminal emulator theme
 - **tmux** - Status bar and pane styling
 - **Fish** - Shell prompt and syntax highlighting
+- **fzf** - Fuzzy finder theme
 - **Bat** - Syntax highlighter theme
 - **eza** - Modern ls replacement theme
 - **lazygit** - Terminal UI for git commands
@@ -67,6 +68,21 @@ For Neovim, use the official [moonlight.nvim](https://github.com/shaunsingh/moon
    ```bash
    source ~/.config/fish/conf.d/moonlight.fish
    ```
+
+### fzf
+
+1. Copy the theme file to your Fish config:
+
+   ```bash
+   cp fzf/moonlight.fish ~/.config/fish/conf.d/fzf-moonlight.fish
+   ```
+
+2. Restart your shell or source the file:
+   ```bash
+   source ~/.config/fish/conf.d/fzf-moonlight.fish
+   ```
+
+   Note: The theme appends to `FZF_DEFAULT_OPTS`, so it works alongside your existing fzf configuration.
 
 ### Bat
 
