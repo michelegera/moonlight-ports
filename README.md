@@ -4,6 +4,7 @@ A collection of [Moonlight](https://github.com/atomiks/moonlight-vscode-theme) t
 
 ## Themes Included
 
+- **Claude Code** - AI coding assistant theme
 - **Ghostty** - Terminal emulator theme
 - **tmux** - Status bar and pane styling
 - **Fish** - Shell prompt and syntax highlighting
@@ -19,6 +20,23 @@ For Neovim, use the official [moonlight.nvim](https://github.com/shaunsingh/moon
 ![Moonlight Theme](https://github.com/atomiks/moonlight-vscode-theme/raw/master/preview.webp)
 
 ## Installation
+
+### Claude Code
+
+1. Copy the theme to Claude Code's themes directory:
+
+   ```bash
+   mkdir -p ~/.claude/themes
+   cp claude-code/Moonlight.json ~/.claude/themes/
+   ```
+
+2. Apply the theme in Claude Code:
+
+   ```
+   /theme
+   ```
+
+   Select **moonlight** from the theme list.
 
 ### Ghostty
 

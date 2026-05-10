@@ -9,6 +9,16 @@ echo "🌌 Moonlight Theme Installer"
 echo "=============================="
 echo
 
+# Claude Code
+if command -v claude &> /dev/null; then
+    echo "🤖 Installing Claude Code theme..."
+    mkdir -p ~/.claude/themes
+    cp "$SCRIPT_DIR/claude-code/Moonlight.json" ~/.claude/themes/
+    echo "   ✓ Installed to ~/.claude/themes/Moonlight.json"
+    echo "   Run '/theme' in Claude Code and select 'moonlight'"
+    echo
+fi
+
 # Neovim
 if command -v nvim &> /dev/null; then
     echo "📝 Installing Neovim theme..."
