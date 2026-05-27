@@ -19,6 +19,17 @@ if command -v claude &> /dev/null; then
     echo
 fi
 
+# opencode
+if command -v opencode &> /dev/null; then
+    echo "🌌 Installing opencode theme..."
+    mkdir -p ~/.config/opencode/themes
+    cp "$SCRIPT_DIR/opencode/moonlight.json" ~/.config/opencode/themes/
+    echo "   ✓ Installed to ~/.config/opencode/themes/moonlight.json"
+    echo "   Run '/theme' in opencode and select 'moonlight'"
+    echo "   Or set '\"theme\": \"moonlight\"' in ~/.config/opencode/tui.json"
+    echo
+fi
+
 # Neovim
 if command -v nvim &> /dev/null; then
     echo "📝 Installing Neovim theme..."

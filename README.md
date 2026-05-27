@@ -5,6 +5,7 @@ A collection of [Moonlight](https://github.com/atomiks/moonlight-vscode-theme) t
 ## Themes Included
 
 - **Claude Code** - AI coding assistant theme
+- **opencode** - AI coding agent theme
 - **Ghostty** - Terminal emulator theme
 - **tmux** - Status bar and pane styling
 - **Fish** - Shell prompt and syntax highlighting
@@ -37,6 +38,26 @@ For Neovim, use the official [moonlight.nvim](https://github.com/shaunsingh/moon
    ```
 
    Select **moonlight** from the theme list.
+
+### opencode
+
+1. Copy the theme to opencode's themes directory:
+
+   ```bash
+   mkdir -p ~/.config/opencode/themes
+   cp opencode/moonlight.json ~/.config/opencode/themes/
+   ```
+
+2. Apply the theme via the config file (`~/.config/opencode/tui.json`):
+
+   ```json
+   {
+     "$schema": "https://opencode.ai/tui.json",
+     "theme": "moonlight"
+   }
+   ```
+
+   Or use the `/theme` command inside opencode and select **moonlight**.
 
 ### Ghostty
 
