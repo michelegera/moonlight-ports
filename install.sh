@@ -48,7 +48,7 @@ if command -v tmux &> /dev/null; then
     TMUX_CONF=~/.tmux.conf
     SOURCE_LINE="source-file ~/.config/tmux/moonlight.tmux"
     
-    if ! grep -q "moonlight.tmux" "$TMUX_CONF" 2>/dev/null; then
+    if ! grep -q '^source-file.*moonlight\.tmux' "$TMUX_CONF" 2>/dev/null; then
         echo "$SOURCE_LINE" >> "$TMUX_CONF"
         echo "   ✓ Copied theme and added source line to ~/.tmux.conf"
         echo "   Run 'tmux source-file ~/.tmux.conf' to apply"
