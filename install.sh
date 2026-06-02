@@ -4,6 +4,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
 
 echo "🌌 Moonlight Theme Installer"
 echo "=============================="
@@ -22,20 +23,20 @@ fi
 # opencode
 if command -v opencode &> /dev/null && [ -f "$SCRIPT_DIR/opencode/moonlight.json" ]; then
     echo "🌌 Installing opencode theme..."
-    mkdir -p ~/.config/opencode/themes
-    cp "$SCRIPT_DIR/opencode/moonlight.json" ~/.config/opencode/themes/
-    echo "   ✓ Installed to ~/.config/opencode/themes/moonlight.json"
+    mkdir -p "$CONFIG_DIR/opencode/themes"
+    cp "$SCRIPT_DIR/opencode/moonlight.json" "$CONFIG_DIR/opencode/themes/"
+    echo "   ✓ Installed to $CONFIG_DIR/opencode/themes/moonlight.json"
     echo "   Run '/theme' in opencode and select 'moonlight'"
-    echo "   Or set '\"theme\": \"moonlight\"' in ~/.config/opencode/tui.json"
+    echo "   Or set '\"theme\": \"moonlight\"' in $CONFIG_DIR/opencode/tui.json"
     echo
 fi
 
 # Ghostty
 if command -v ghostty &> /dev/null && [ -f "$SCRIPT_DIR/ghostty/moonlight" ]; then
     echo "👻 Installing Ghostty theme..."
-    mkdir -p ~/.config/ghostty/themes
-    cp "$SCRIPT_DIR/ghostty/moonlight" ~/.config/ghostty/themes/
-    echo "   ✓ Installed to ~/.config/ghostty/themes/moonlight"
+    mkdir -p "$CONFIG_DIR/ghostty/themes"
+    cp "$SCRIPT_DIR/ghostty/moonlight" "$CONFIG_DIR/ghostty/themes/"
+    echo "   ✓ Installed to $CONFIG_DIR/ghostty/themes/moonlight"
     echo "   Add 'theme = moonlight' to your Ghostty config"
     echo
 fi
@@ -43,17 +44,17 @@ fi
 # tmux
 if command -v tmux &> /dev/null && [ -f "$SCRIPT_DIR/tmux/moonlight.tmux" ]; then
     echo "🖥️  Installing tmux theme..."
-    mkdir -p ~/.config/tmux
-    cp "$SCRIPT_DIR/tmux/moonlight.tmux" ~/.config/tmux/
+    mkdir -p "$CONFIG_DIR/tmux"
+    cp "$SCRIPT_DIR/tmux/moonlight.tmux" "$CONFIG_DIR/tmux/"
     TMUX_CONF=~/.tmux.conf
-    SOURCE_LINE="source-file ~/.config/tmux/moonlight.tmux"
+    SOURCE_LINE="source-file $CONFIG_DIR/tmux/moonlight.tmux"
     
     if ! grep -q '^source-file.*moonlight\.tmux' "$TMUX_CONF" 2>/dev/null; then
         echo "$SOURCE_LINE" >> "$TMUX_CONF"
         echo "   ✓ Copied theme and added source line to ~/.tmux.conf"
         echo "   Run 'tmux source-file ~/.tmux.conf' to apply"
     else
-        echo "   ✓ Copied theme to ~/.config/tmux/moonlight.tmux"
+        echo "   ✓ Copied theme to $CONFIG_DIR/tmux/moonlight.tmux"
         echo "   ℹ Already configured in ~/.tmux.conf"
     fi
     echo
@@ -62,10 +63,10 @@ fi
 # Fish
 if command -v fish &> /dev/null && [ -f "$SCRIPT_DIR/fish/moonlight.fish" ]; then
     echo "🐟 Installing Fish theme..."
-    mkdir -p ~/.config/fish/conf.d
-    cp "$SCRIPT_DIR/fish/moonlight.fish" ~/.config/fish/conf.d/
-    echo "   ✓ Installed to ~/.config/fish/conf.d/moonlight.fish"
-    echo "   Restart your shell or run 'source ~/.config/fish/conf.d/moonlight.fish'"
+    mkdir -p "$CONFIG_DIR/fish/conf.d"
+    cp "$SCRIPT_DIR/fish/moonlight.fish" "$CONFIG_DIR/fish/conf.d/"
+    echo "   ✓ Installed to $CONFIG_DIR/fish/conf.d/moonlight.fish"
+    echo "   Restart your shell or run 'source $CONFIG_DIR/fish/conf.d/moonlight.fish'"
     echo
 fi
 
@@ -77,26 +78,26 @@ if command -v bat &> /dev/null && [ -f "$SCRIPT_DIR/bat/Moonlight.tmTheme" ]; th
     cp "$SCRIPT_DIR/bat/Moonlight.tmTheme" "$BAT_THEMES/"
     bat cache --build &> /dev/null || true
     echo "   ✓ Installed and rebuilt cache"
-    echo "   Use 'bat --theme=Moonlight' or add '--theme=\"Moonlight\"' to ~/.config/bat/config"
+    echo "   Use 'bat --theme=Moonlight' or add '--theme=\"Moonlight\"' to $CONFIG_DIR/bat/config"
     echo
 fi
 
 # fzf
 if command -v fzf &> /dev/null && command -v fish &> /dev/null && [ -f "$SCRIPT_DIR/fzf/moonlight.fish" ]; then
     echo "🔍 Installing fzf theme..."
-    mkdir -p ~/.config/fish/conf.d
-    cp "$SCRIPT_DIR/fzf/moonlight.fish" ~/.config/fish/conf.d/fzf-moonlight.fish
-    echo "   ✓ Installed to ~/.config/fish/conf.d/fzf-moonlight.fish"
-    echo "   Restart your shell or run 'source ~/.config/fish/conf.d/fzf-moonlight.fish'"
+    mkdir -p "$CONFIG_DIR/fish/conf.d"
+    cp "$SCRIPT_DIR/fzf/moonlight.fish" "$CONFIG_DIR/fish/conf.d/fzf-moonlight.fish"
+    echo "   ✓ Installed to $CONFIG_DIR/fish/conf.d/fzf-moonlight.fish"
+    echo "   Restart your shell or run 'source $CONFIG_DIR/fish/conf.d/fzf-moonlight.fish'"
     echo
 fi
 
 # eza
 if command -v eza &> /dev/null && [ -f "$SCRIPT_DIR/eza/moonlight.yml" ]; then
     echo "📁 Installing eza theme..."
-    mkdir -p ~/.config/eza
-    cp "$SCRIPT_DIR/eza/moonlight.yml" ~/.config/eza/theme.yml
-    echo "   ✓ Installed to ~/.config/eza/theme.yml"
+    mkdir -p "$CONFIG_DIR/eza"
+    cp "$SCRIPT_DIR/eza/moonlight.yml" "$CONFIG_DIR/eza/theme.yml"
+    echo "   ✓ Installed to $CONFIG_DIR/eza/theme.yml"
     echo "   Run 'eza --long --git' to see the theme"
     echo
 fi
@@ -104,9 +105,9 @@ fi
 # lazygit
 if command -v lazygit &> /dev/null && [ -f "$SCRIPT_DIR/lazygit/moonlight.yml" ]; then
     echo "🔀 Installing lazygit theme..."
-    mkdir -p ~/.config/lazygit
-    cp "$SCRIPT_DIR/lazygit/moonlight.yml" ~/.config/lazygit/
-    echo "   ✓ Installed to ~/.config/lazygit/moonlight.yml"
+    mkdir -p "$CONFIG_DIR/lazygit"
+    cp "$SCRIPT_DIR/lazygit/moonlight.yml" "$CONFIG_DIR/lazygit/"
+    echo "   ✓ Installed to $CONFIG_DIR/lazygit/moonlight.yml"
     echo "   Set LG_CONFIG_FILE to use the theme (see README for details)"
     echo
 fi
