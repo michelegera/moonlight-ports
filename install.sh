@@ -30,16 +30,6 @@ if command -v opencode &> /dev/null; then
     echo
 fi
 
-# Neovim
-if command -v nvim &> /dev/null; then
-    echo "📝 Installing Neovim theme..."
-    mkdir -p ~/.config/nvim/colors
-    cp "$SCRIPT_DIR/neovim/moonlight.lua" ~/.config/nvim/colors/
-    echo "   ✓ Installed to ~/.config/nvim/colors/moonlight.lua"
-    echo "   Add 'vim.cmd(\"colorscheme moonlight\")' to your init.lua"
-    echo
-fi
-
 # Ghostty
 if command -v ghostty &> /dev/null; then
     echo "👻 Installing Ghostty theme..."
