@@ -78,6 +78,36 @@ if command -v bat &> /dev/null; then
     echo
 fi
 
+# fzf
+if command -v fzf &> /dev/null && command -v fish &> /dev/null; then
+    echo "🔍 Installing fzf theme..."
+    mkdir -p ~/.config/fish/conf.d
+    cp "$SCRIPT_DIR/fzf/moonlight.fish" ~/.config/fish/conf.d/fzf-moonlight.fish
+    echo "   ✓ Installed to ~/.config/fish/conf.d/fzf-moonlight.fish"
+    echo "   Restart your shell or run 'source ~/.config/fish/conf.d/fzf-moonlight.fish'"
+    echo
+fi
+
+# eza
+if command -v eza &> /dev/null; then
+    echo "📁 Installing eza theme..."
+    mkdir -p ~/.config/eza
+    cp "$SCRIPT_DIR/eza/moonlight.yml" ~/.config/eza/theme.yml
+    echo "   ✓ Installed to ~/.config/eza/theme.yml"
+    echo "   Run 'eza --long --git' to see the theme"
+    echo
+fi
+
+# lazygit
+if command -v lazygit &> /dev/null; then
+    echo "🔀 Installing lazygit theme..."
+    mkdir -p ~/.config/lazygit
+    cp "$SCRIPT_DIR/lazygit/moonlight.yml" ~/.config/lazygit/
+    echo "   ✓ Installed to ~/.config/lazygit/moonlight.yml"
+    echo "   Set LG_CONFIG_FILE to use the theme (see README for details)"
+    echo
+fi
+
 echo "✨ Installation complete!"
 echo
 echo "For more details, see README.md in each theme directory."
