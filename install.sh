@@ -43,14 +43,17 @@ fi
 # tmux
 if command -v tmux &> /dev/null; then
     echo "🖥️  Installing tmux theme..."
+    mkdir -p ~/.config/tmux
+    cp "$SCRIPT_DIR/tmux/moonlight.tmux" ~/.config/tmux/
     TMUX_CONF=~/.tmux.conf
-    SOURCE_LINE="source-file $SCRIPT_DIR/tmux/moonlight.tmux"
+    SOURCE_LINE="source-file ~/.config/tmux/moonlight.tmux"
     
     if ! grep -q "moonlight.tmux" "$TMUX_CONF" 2>/dev/null; then
         echo "$SOURCE_LINE" >> "$TMUX_CONF"
-        echo "   ✓ Added source line to ~/.tmux.conf"
+        echo "   ✓ Copied theme and added source line to ~/.tmux.conf"
         echo "   Run 'tmux source-file ~/.tmux.conf' to apply"
     else
+        echo "   ✓ Copied theme to ~/.config/tmux/moonlight.tmux"
         echo "   ℹ Already configured in ~/.tmux.conf"
     fi
     echo
