@@ -10,7 +10,7 @@ echo "=============================="
 echo
 
 # Claude Code
-if command -v claude &> /dev/null; then
+if command -v claude &> /dev/null && [ -f "$SCRIPT_DIR/claude-code/Moonlight.json" ]; then
     echo "🤖 Installing Claude Code theme..."
     mkdir -p ~/.claude/themes
     cp "$SCRIPT_DIR/claude-code/Moonlight.json" ~/.claude/themes/
@@ -20,7 +20,7 @@ if command -v claude &> /dev/null; then
 fi
 
 # opencode
-if command -v opencode &> /dev/null; then
+if command -v opencode &> /dev/null && [ -f "$SCRIPT_DIR/opencode/moonlight.json" ]; then
     echo "🌌 Installing opencode theme..."
     mkdir -p ~/.config/opencode/themes
     cp "$SCRIPT_DIR/opencode/moonlight.json" ~/.config/opencode/themes/
@@ -31,7 +31,7 @@ if command -v opencode &> /dev/null; then
 fi
 
 # Ghostty
-if command -v ghostty &> /dev/null; then
+if command -v ghostty &> /dev/null && [ -f "$SCRIPT_DIR/ghostty/moonlight" ]; then
     echo "👻 Installing Ghostty theme..."
     mkdir -p ~/.config/ghostty/themes
     cp "$SCRIPT_DIR/ghostty/moonlight" ~/.config/ghostty/themes/
@@ -41,7 +41,7 @@ if command -v ghostty &> /dev/null; then
 fi
 
 # tmux
-if command -v tmux &> /dev/null; then
+if command -v tmux &> /dev/null && [ -f "$SCRIPT_DIR/tmux/moonlight.tmux" ]; then
     echo "🖥️  Installing tmux theme..."
     mkdir -p ~/.config/tmux
     cp "$SCRIPT_DIR/tmux/moonlight.tmux" ~/.config/tmux/
@@ -60,7 +60,7 @@ if command -v tmux &> /dev/null; then
 fi
 
 # Fish
-if command -v fish &> /dev/null; then
+if command -v fish &> /dev/null && [ -f "$SCRIPT_DIR/fish/moonlight.fish" ]; then
     echo "🐟 Installing Fish theme..."
     mkdir -p ~/.config/fish/conf.d
     cp "$SCRIPT_DIR/fish/moonlight.fish" ~/.config/fish/conf.d/
@@ -70,7 +70,7 @@ if command -v fish &> /dev/null; then
 fi
 
 # Bat
-if command -v bat &> /dev/null; then
+if command -v bat &> /dev/null && [ -f "$SCRIPT_DIR/bat/Moonlight.tmTheme" ]; then
     echo "🦇 Installing Bat theme..."
     BAT_THEMES="$(bat --config-dir)/themes"
     mkdir -p "$BAT_THEMES"
@@ -82,7 +82,7 @@ if command -v bat &> /dev/null; then
 fi
 
 # fzf
-if command -v fzf &> /dev/null && command -v fish &> /dev/null; then
+if command -v fzf &> /dev/null && command -v fish &> /dev/null && [ -f "$SCRIPT_DIR/fzf/moonlight.fish" ]; then
     echo "🔍 Installing fzf theme..."
     mkdir -p ~/.config/fish/conf.d
     cp "$SCRIPT_DIR/fzf/moonlight.fish" ~/.config/fish/conf.d/fzf-moonlight.fish
@@ -92,7 +92,7 @@ if command -v fzf &> /dev/null && command -v fish &> /dev/null; then
 fi
 
 # eza
-if command -v eza &> /dev/null; then
+if command -v eza &> /dev/null && [ -f "$SCRIPT_DIR/eza/moonlight.yml" ]; then
     echo "📁 Installing eza theme..."
     mkdir -p ~/.config/eza
     cp "$SCRIPT_DIR/eza/moonlight.yml" ~/.config/eza/theme.yml
@@ -102,7 +102,7 @@ if command -v eza &> /dev/null; then
 fi
 
 # lazygit
-if command -v lazygit &> /dev/null; then
+if command -v lazygit &> /dev/null && [ -f "$SCRIPT_DIR/lazygit/moonlight.yml" ]; then
     echo "🔀 Installing lazygit theme..."
     mkdir -p ~/.config/lazygit
     cp "$SCRIPT_DIR/lazygit/moonlight.yml" ~/.config/lazygit/
