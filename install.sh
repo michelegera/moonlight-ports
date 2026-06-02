@@ -75,7 +75,7 @@ if command -v bat &> /dev/null && [ -f "$SCRIPT_DIR/bat/Moonlight.tmTheme" ]; th
     BAT_THEMES="$(bat --config-dir)/themes"
     mkdir -p "$BAT_THEMES"
     cp "$SCRIPT_DIR/bat/Moonlight.tmTheme" "$BAT_THEMES/"
-    bat cache --build &> /dev/null
+    bat cache --build &> /dev/null || true
     echo "   ✓ Installed and rebuilt cache"
     echo "   Use 'bat --theme=Moonlight' or add '--theme=\"Moonlight\"' to ~/.config/bat/config"
     echo
