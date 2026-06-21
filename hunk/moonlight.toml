@@ -13,6 +13,7 @@
 theme = "custom"
 
 [custom_theme]
+base = "catppuccin-mocha"
 label = "Moonlight"
 
 # Surface colors
