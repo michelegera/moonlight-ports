@@ -13,6 +13,7 @@ A collection of [Moonlight](https://github.com/atomiks/moonlight-vscode-theme) t
 - **Bat** - Syntax highlighter theme
 - **eza** - Modern ls replacement theme
 - **lazygit** - Terminal UI for git commands
+- **hunk** - Review-first terminal diff viewer
 
 For Neovim, use the official [moonlight.nvim](https://github.com/shaunsingh/moonlight.nvim) theme.
 
@@ -216,6 +217,37 @@ For Neovim, use the official [moonlight.nvim](https://github.com/shaunsingh/moon
    ```bash
    export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/moonlight.yml"
    ```
+
+### hunk
+
+1. Copy the theme config to your hunk configuration. You can either append it to your existing config or create a new one:
+
+   **If you have an existing hunk config** (`~/.config/hunk/config.toml` or `.hunk/config.toml`), append the theme section:
+
+   ```bash
+   cat hunk/moonlight.toml >> ~/.config/hunk/config.toml
+   ```
+
+   **To create a new config** with just the Moonlight theme:
+
+   ```bash
+   mkdir -p ~/.config/hunk
+   cp hunk/moonlight.toml ~/.config/hunk/config.toml
+   ```
+
+2. Launch hunk with the custom theme:
+
+   ```bash
+   hunk --theme=custom
+   ```
+
+   Or set it as the default in your config by ensuring this line is present:
+
+   ```toml
+   theme = "custom"
+   ```
+
+   You can also switch themes interactively by pressing `t` while hunk is running.
 
 ## Color Palette
 
