@@ -117,6 +117,7 @@ For Neovim, use the official [moonlight.nvim](https://github.com/shaunsingh/moon
    ```
 
 2. Restart your shell or source the file:
+
    ```bash
    source ~/.config/fish/conf.d/fzf-moonlight.fish
    ```
