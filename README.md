@@ -6,6 +6,7 @@ A collection of [Moonlight](https://github.com/atomiks/moonlight-vscode-theme) t
 
 - **Claude Code** - AI coding assistant theme
 - **opencode** - AI coding agent theme
+- **oh-my-pi** - Terminal AI coding agent theme (https://omp.sh/)
 - **Ghostty** - Terminal emulator theme
 - **tmux** - Status bar and pane styling
 - **Fish** - Shell prompt and syntax highlighting
@@ -59,6 +60,28 @@ For Neovim, use the official [moonlight.nvim](https://github.com/shaunsingh/moon
    ```
 
    Or use the `/theme` command inside opencode and select **moonlight**.
+
+### oh-my-pi
+
+1. Copy the theme to oh-my-pi's custom themes directory:
+
+   ```bash
+   mkdir -p ~/.omp/agent/themes
+   cp omp/moonlight.json ~/.omp/agent/themes/
+   ```
+
+2. Apply the theme in oh-my-pi:
+
+   Open the Settings UI (`Ctrl+S` or `Cmd+S`) and select **moonlight** under `Appearance -> Dark Theme`.
+
+   Or edit `~/.omp/agent/config.yml` directly:
+
+   ```yaml
+   theme:
+     dark: moonlight
+   ```
+
+3. Restart oh-my-pi or switch themes interactively to load the theme.
 
 ### Ghostty
 
