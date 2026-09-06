@@ -1,0 +1,69 @@
+# Moonlight theme for tuicr
+# https://github.com/atomiks/moonlight-vscode-theme
+#
+# Install:
+#   mkdir -p ~/.config/tuicr/themes
+#   cp moonlight.toml moonlight-syntax.tmTheme ~/.config/tuicr/themes/
+#
+# Then run `tuicr --theme moonlight` or set `theme = "moonlight"`
+# in ~/.config/tuicr/config.toml
+
+# Base colors
+panel_bg = "#212337"
+bg_highlight = "#444a73"
+fg_primary = "#c8d3f5"
+fg_secondary = "#a9b8e8"
+fg_dim = "#7a88cf"
+
+# Diff colors
+diff_add = "#c3e88d"
+diff_add_bg = "#414a48"
+diff_del = "#ff757f"
+diff_del_bg = "#4d3345"
+diff_context = "#c8d3f5"
+diff_hunk_header = "#82aaff"
+expanded_context_fg = "#7a88cf"
+
+# Syntax highlighting diff backgrounds
+syntax_add_bg = "#3a4244"
+syntax_del_bg = "#443042"
+syntax_theme = "moonlight-syntax.tmTheme"
+
+# File status colors
+file_added = "#c3e88d"
+file_modified = "#ffc777"
+file_deleted = "#ff757f"
+file_renamed = "#fca7ea"
+
+# Review status colors
+reviewed = "#c3e88d"
+pending = "#ffc777"
+
+# Comment type colors
+comment_note = "#82aaff"
+comment_suggestion = "#86e1fc"
+comment_issue = "#ff757f"
+comment_praise = "#c3e88d"
+
+# UI element colors
+border_focused = "#82aaff"
+border_unfocused = "#444a73"
+status_bar_bg = "#191a2a"
+cursor_color = "#82aaff"
+cursor_line_bg = "#2f334d"
+branch_name = "#fca7ea"
+help_indicator = "#7a88cf"
+
+# Message/update badge colors
+message_info_fg = "#191a2a"
+message_info_bg = "#86e1fc"
+message_warning_fg = "#191a2a"
+message_warning_bg = "#ffc777"
+message_error_fg = "#191a2a"
+message_error_bg = "#ff757f"
+update_badge_fg = "#191a2a"
+update_badge_bg = "#ff995e"
+
+# Mode indicator colors
+mode_fg = "#191a2a"
+mode_bg = "#82aaff"

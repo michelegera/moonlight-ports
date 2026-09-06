@@ -15,6 +15,7 @@ A collection of [Moonlight](https://github.com/atomiks/moonlight-vscode-theme) t
 - **eza** - Modern ls replacement theme
 - **lazygit** - Terminal UI for git commands
 - **hunk** - Review-first terminal diff viewer
+- **tuicr** - Code review TUI with vim keybindings (https://tuicr.dev/)
 
 For Neovim, use the official [moonlight.nvim](https://github.com/shaunsingh/moonlight.nvim) theme.
 
@@ -270,7 +271,28 @@ For Neovim, use the official [moonlight.nvim](https://github.com/shaunsingh/moon
    theme = "custom"
    ```
 
-   You can also switch themes interactively by pressing `t` while hunk is running.
+    You can also switch themes interactively by pressing `t` while hunk is running.
+
+### tuicr
+
+1. Copy the theme (and its syntax highlighting theme) to tuicr's themes directory:
+
+    ```bash
+    mkdir -p ~/.config/tuicr/themes
+    cp tuicr/moonlight.toml tuicr/moonlight-syntax.tmTheme ~/.config/tuicr/themes/
+    ```
+
+2. Launch tuicr with the theme:
+
+    ```bash
+    tuicr --theme moonlight
+    ```
+
+    Or set it as the default in `~/.config/tuicr/config.toml`:
+
+    ```toml
+    theme = "moonlight"
+    ```
 
 ## Color Palette
 
